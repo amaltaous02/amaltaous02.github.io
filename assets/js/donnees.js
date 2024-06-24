@@ -29,30 +29,38 @@ function loadXSLTDoc(filename) {
 }
 
 async function transformXML() {
-  try {
-      const xml = await loadXMLDoc("assets/donnees.xml");
-      const xsl = await loadXSLTDoc("assets/transform.xslt");
-
-      const lang = document.getElementById("langSwitcher").value;
-
-      if (window.ActiveXObject || "ActiveXObject" in window) {
-          const ex = xml.transformNode(xsl);
-          document.getElementById("parcoursaca").innerHTML = ex;
-      } else if (document.implementation && document.implementation.createDocument) {
-          const xsltProcessor = new XSLTProcessor();
-          xsltProcessor.importStylesheet(xsl);
-          
-          // Set the language parameter
-          xsltProcessor.setParameter(null, "lang", lang);
-
-          const resultDocument = xsltProcessor.transformToFragment(xml, document);
-          document.getElementById("parcoursaca").innerHTML = "";
-          document.getElementById("parcoursaca").appendChild(resultDocument);
-      }
-  } catch (error) {
-      console.error("Error during XML transformation:", error);
+    try {
+        const xml = await loadXMLDoc("assets/donnees.xml");
+        const xsl = await loadXSLTDoc("assets/transform.xslt");
+  
+        const lang = document.getElementById("langSwitcher").value;
+  
+        if (window.ActiveXObject || "ActiveXObject" in window) {
+            const ex = xml.transformNode(xsl);
+            document.getElementById("parcoursaca").innerHTML = ex;
+        } else if (document.implementation && document.implementation.createDocument) {
+            const xsltProcessor = new XSLTProcessor();
+            xsltProcessor.importStylesheet(xsl);
+            
+            // Set the language parameter
+            xsltProcessor.setParameter(null, "lang", lang);
+  
+            const resultDocument = xsltProcessor.transformToFragment(xml, document);
+            const parcoursaca = document.getElementById("parcoursaca");
+            parcoursaca.innerHTML = "";
+            parcoursaca.appendChild(resultDocument);
+        }
+  
+        // Remove the temporary title
+        const tempTitle = document.getElementById("temp-title");
+        if (tempTitle) {
+            tempTitle.remove();
+        }
+    } catch (error) {
+        console.error("Error during XML transformation:", error);
+    }
   }
-}
-
-document.addEventListener('DOMContentLoaded', transformXML);
-document.getElementById("langSwitcher").addEventListener("change", transformXML);
+  
+  document.addEventListener('DOMContentLoaded', transformXML);
+  document.getElementById("langSwitcher").addEventListener("change", transformXML);
+  
