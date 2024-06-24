@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xslt"?>
+<academicPath xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="donnees.xsd">
+    <title>
+        <name lang="fr">PARCOURS ACADÉMIQUES</name>
+        <name lang="en">ACADEMIC JOURNEY</name>
+        <name lang="ar">الرحلة الأكاديمية</name>
+    </title> 
+    <subtitle>
+        <name lang="fr">en XML</name>
+        <name lang="en">in XML</name>
+        <name lang="ar">بالاكسيميل</name>
+    </subtitle>    
+    <course>
+        <name lang="fr">Obtention BAC</name>
+        <name lang="en">High School Diploma</name>
+        <name lang="ar">شهادة البكالوريا</name>
+        <status lang="fr">Complété</status>
+        <status lang="en">Completed</status>
+        <status lang="ar">مكتمل</status>
+    </course>
+    <course>
+        <name lang="fr">1 ére année Medecine</name>
+        <name lang="en">1st Year Medicine</name>
+        <name lang="ar">السنة الأولى طب</name>
+        <status lang="fr">Complété</status>
+        <status lang="en">Completed</status>
+        <status lang="ar">مكتمل</status>
+    </course>
+    <course>
+        <name lang="fr">Licence Math 2</name>
+        <name lang="en">Bachelor in Mathematics 2</name>
+        <name lang="ar">رخصة في الرياضيات 2</name>
+        <status lang="fr">Complété</status>
+        <status lang="en">Completed</status>
+        <status lang="ar">مكتمل</status>
+    </course>
+    <course>
+        <name lang="fr">Ingénieur 1</name>
+        <name lang="en">Engineer Level 1</name>
+        <name lang="ar">مهندس مستوى 1</name>
+        <status lang="fr">Complété</status>
+        <status lang="en">Completed</status>
+        <status lang="ar">مكتمل</status>
+    </course>
+    <course>
+        <name lang="fr">Ingénieur 2</name>
+        <name lang="en">Engineer Level 2</name>
+        <name lang="ar">مهندس مستوى 2</name>
+        <status lang="fr">En cours</status>
+        <status lang="en">Ongoing</status>
+        <status lang="ar">جاري</status>
+    </course>
+    <course>
+        <name lang="fr">Ingénieur 3</name>
+        <name lang="en">Engineer Level 3</name>
+        <name lang="ar">مهندس مستوى 3</name>
+        <status lang="fr">À venir</status>
+        <status lang="en">Upcoming</status>
+        <status lang="ar">القادمة</status>
+    </course>
+</academicPath>
